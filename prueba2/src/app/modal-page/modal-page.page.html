@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar persona</ion-title>
+    <ion-button slot="end" color="light" (click)="cerrar()">cerrar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-list>
+          <ion-item *ngFor="let entry of form">
+            <ion-label>{{entry.val}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button expand="full" fill="clear" color="light" (click)="cerrar()">
+      Agregar
+    </ion-button>  
+  </ion-toolbar> 
+</ion-footer>
+
